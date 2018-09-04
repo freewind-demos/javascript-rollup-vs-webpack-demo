@@ -1,22 +1,24 @@
-JavaScript Rollup Demo
-======================
+JavaScript Rollup vs Webpack Demo
+=================================
 
-Rollup是一个打包工具，它假定代码只使用ES6中的`import from`标准，然后把关联的代码打包成指定的模块系统。
+Rollup和Webpack都是打包工具。在Webpack已经快一统江湖的时候，为什么还有人愿意使用rollup呢？
+
+我想原因是：有的时候，比如写一个js库，在所有东西可控的情况下，我们只需要生成紧凑单一的最终文件，不需要处理复杂的模块，这时使用rollup就很合适。
+
+而webpack始终考虑周全，在生成的代码中包含很多在这种情况下就显得有点多虑。
+
+这个Demo里同时使用rollup和webpack对同一份代码进行打包，看一下最终产生的代码就明白了。
 
 ```
 npm install
-npm run demo
+npm run rollup
+npm run webpack
 ```
 
-将会生成`bundle.js`文件。
+将会生成`bundle-rollup.js`和`bundle-webpack.js`文件。
 
-`rollup.config.js` -> `external`
---------------------------------
+Resources
+---------
 
-在代码中，如果使用了第三方类库，比如`lodash`，需要在rollup的命令中声明一下`--external lodash`，这样将不会产生下面的警告：
-
-```
-(!) Unresolved dependencies
-https://github.com/rollup/rollup/wiki/Troubleshooting#treating-module-as-external-dependency
-lodash (imported by hello.js)
-```
+- Rollup vs Webpack (JavaScript bundling in 2018): <https://medium.com/jsdownunder/rollup-vs-webpack-javascript-bundling-in-2018-b35758a2268>
+- Webpack、Rollup相爱相杀的那些事: <https://www.w3ctech.com/topic/1996>
