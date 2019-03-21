@@ -1,6 +1,8 @@
 export default {
-    entry: 'main.js',
-    dest: 'bundle-rollup.js',
+  input: 'main.js',
+  output: {
+    file: 'bundle-rollup.js',
     format: 'cjs',
-    external: ['lodash']
+  },
+  external: ['lodash']
 }
